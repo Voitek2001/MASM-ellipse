@@ -1,3 +1,6 @@
 # MASM-ellipse
-Implementation of ellipse in Assembly x86 using Bresenham's algorithm and naive method using a straightforward
-$x^2 \over a^2 + y^2 \over b^2 = 0$ formula 
+ The purpose of this project was to dive into assembly programming and draw attention to the very important detail that in spite of a fast programming language such as assembler (the fastest), if the algorithm is quite naive, the program is still quite slow in comparison to a well-chosen and well-thought-out algorithm.
+ $$\newline$$
+Implementation of ellipse in Assembly x86 using Bresenham's algorithm and naive method using a straightforward formula $${\displaystyle {\frac {x^{2}}{a^{2}}}+{\frac {y^{2}}{b^{2}}}=1.}$$
+You can switch between drawing mode using R key or switch ellipse color by C key.
+It's drawed in video mode 320x200x256 colors so the limitation of our ellipse is 320 pixels wide and 200 pixel high. However, implementation only allows to draw a 200x200 elipse. $$\newline$$ To handle large values which Bresenham and naive method can produce we are using Floating-Point Unit(FPU) which provides operations on large numbers easily. We attach FPU by processor directive .387. $$\newline$$ To run program you need to specify length of both x and y axis, if not axis will be set automatically on default values. Input values are parsed and check if they are valid. If progam detects that values for axis are not valid it will print information about it. Example of usage: $$prog.exe \space 60 \space 120$$ <p align="center"><img src="https://github.com/Voitek2001/MASM-ellipse/assets/75041336/f61afd07-67c4-4daa-af0a-9f838cb518bd" width="600" height="300" alt=""></p> 
